@@ -1,0 +1,21 @@
+<div>
+    <div class ="h1">PRS Login |
+<input [(ngModel)]="user.userName" type ="text" placeholder="UserName">
+<input [(ngModel)]="user.password" type ="text" placeholder="Password">
+    </div>
+    
+    <div>
+    <p>UserName</p>
+    <p>Password</p>
+    </div>
+
+
+  <tr>
+    <td>{{ user.userName }}</td>
+    <td>{{ user.password | mask }}</td>
+    <td>user-login works!</td>
+
+    <button (click)="login()" class = "btn btn-primary">Login</button>
+  </tr>
+</div>
+

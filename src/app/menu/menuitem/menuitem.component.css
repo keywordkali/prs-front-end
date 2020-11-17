@@ -1,0 +1,14 @@
+li{
+    display: inline-block;
+}
+
+a{
+    color: silver;
+    text-decoration: none;
+    padding: 0 10px; 
+    /* the 0 represents the top and bottom around the menu and 10px is the left and right sides */
+}
+a:hover{
+    background-color: black;
+    color: white;
+}
