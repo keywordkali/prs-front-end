@@ -7,6 +7,8 @@ import { AboutComponent } from './menu/about/about.component';
 import { HelpComponent } from './menu/help/help.component';
 import { E404Component } from './menu/e404/e404.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { UserCreateComponent } from './user/user-create/user-create.component';
 const routes: Routes = [
   { path: "", redirectTo:"/users/list", pathMatch: "full"},
   { path: "login", component: UserLoginComponent},
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: "help", component: HelpComponent },
   { path: "users/list", component: UserListComponent },
   { path: "users/edit/:id", component: UserEditComponent },
+  { path: "users/detail/:id", component: UserDetailComponent },
+  { path: "users/create/", component: UserCreateComponent },
   { path: "**", component: E404Component }
 ];
 

@@ -19,6 +19,8 @@ import { MenuitemComponent } from './menu/menuitem/menuitem.component';
 import { HomeComponent } from './menu/home/home.component';
 import { HelpComponent } from './menu/help/help.component';
 import { E404Component } from './menu/e404/e404.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { UserCreateComponent } from './user/user-create/user-create.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,9 @@ import { E404Component } from './menu/e404/e404.component';
     MenuitemComponent,
     HomeComponent,
     HelpComponent,
-    E404Component
+    E404Component,
+    UserDetailComponent,
+    UserCreateComponent
   ],
   imports: [
     BrowserModule,
