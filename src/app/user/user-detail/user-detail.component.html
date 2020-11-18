@@ -55,5 +55,9 @@
             <td>
                 <input [(ngModel)]="user.admin" disabled type="checkbox" size="25">  
             </td>
-        </tr>
+        
+        <td colspan="2">
+            <button (click)="remove()" class = "btn btn-primary">Delete</button>
+        </td>
+    </tr>
     </table>

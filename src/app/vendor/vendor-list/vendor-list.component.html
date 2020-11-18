@@ -1,0 +1,34 @@
+<app-menu></app-menu>
+<div>
+    <div class ="h3">Vendor List | <a routerLink="/vendors/create">Create</a> | 
+<input [(ngModel)]="searchCriteria" type ="text" placeholder="Search">
+    </div>
+    <table [ngClass]= "tableStyle">
+        <tr>
+    
+            <th><a (click) ="sortColumn('id')"class= "btn btn-link">ID</a></th>
+            <th><a (click) ="sortColumn('code')"class="btn btn-link">Code</a></th>
+            <th><a (click) ="sortColumn('name')"class="btn btn-link">Name</a></th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>PhoneNumber</th>
+            <th>Email</th>
+          </tr>
+          <tr *ngFor="let vendor of vendors">
+            <td>{{ vendor.id }}</td>
+            <td>{{ vendor.code }}</td>
+            <td>{{ vendor.name }}</td>
+            <td>{{ vendor.address }}</td>
+            <td>{{ vendor.city }}</td>
+            <td>{{ vendor.state }}</td>
+            <td>{{ vendor.zip }}</td>
+            <td>{{ vendor.phoneNumber }}</td>
+            <td>{{ vendor.email }}</td>
+            <td>
+              <a routerLink="/vendors/edit/{{vendor.id}}">Edit</a> | <a routerLink="/vendors/detail/{{vendor.id}}">Details</a>
+            </td>
+          </tr>
+        </table>
+        </div>

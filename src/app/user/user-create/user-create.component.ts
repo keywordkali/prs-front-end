@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./user-create.component.css']
 })
 export class UserCreateComponent implements OnInit {
-user:User;
+user:User = new User();
   constructor(
     private usersvc: UserService,
     private route: ActivatedRoute,
@@ -28,16 +28,7 @@ user:User;
   }
 
   ngOnInit(): void {
-    let id = +this.route.snapshot.params.id;
-    this.usersvc.get(id).subscribe(
-      res => {
-        console.debug(res);
-        this.user = res;
-      },
-      err => { 
-        console.error(err); 
-      }
-    );
+    
   }
 
 }

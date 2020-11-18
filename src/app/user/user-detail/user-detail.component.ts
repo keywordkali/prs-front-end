@@ -19,16 +19,18 @@ export class UserDetailComponent implements OnInit {
     
   ) { }
 
-  detail(): void{
+  remove(): void{
     console.log(this.user);
-    this.usersvc.get(this.user).subscribe(
+    this.usersvc.remove(this.user).subscribe(
       res => {
-        console.debug("User Detail:", res);
-        this.router.navigateByUrl("/users/detail");
+        console.debug("User Removed:", res);
+        this.router.navigateByUrl("/users/list");
       },
-      err => { console.error("Error:" , err); }
+      err => { console.error("Error removing user:" , err); }
     );
   }
+
+
 
   ngOnInit(): void {
     let id = +this.route.snapshot.params.id;
