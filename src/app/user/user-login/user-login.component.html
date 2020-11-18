@@ -1,15 +1,29 @@
-<div>
-    <div class ="h1">PRS Login |
-<input [(ngModel)]="user.userName" type ="text" placeholder="UserName">
-<input [(ngModel)]="user.password" type ="text" placeholder="Password">
-    </div>
-    
-  <tr>
-    <td>{{ user.userName }}</td>
-    <td>{{ user.password | mask }}</td>
-   
-
-    <button (click)="login()" class = "btn btn-primary">Login</button>
-  </tr>
+<div class="welcome">
+  <h1>Login to PRS</h1>
+</div>
+<div class='component-content'>
+  <form class='text-center'>
+    <table *ngIf='username&&password' class='table-sm'
+      style='margin:50px auto;padding: 5px 20px; border:1px solid silver;width:400px; background-color: wheat;'>
+      <tr class='text-center'>
+        <td colspan="2">Login</td>
+      </tr>
+      <tr>
+        <td>Username:</td>
+        <td><input [(ngModel)]='username' name='UserName' type='text'></td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td><input [(ngModel)]='password' name='Password' type='password'></td>
+      </tr>
+      <tr>
+        <td class='text-center' colspan="2"><button type='submit' (click)="login()"
+            class='btn btn-primary'>Login</button></td>
+      </tr>
+      <tr>
+        <td colspan="2"><label class='text-sm-left'>{{message}}</label></td>
+      </tr>
+    </table>
+  </form>
 </div>
 

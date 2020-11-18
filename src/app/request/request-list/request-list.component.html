@@ -1,0 +1,36 @@
+<app-menu></app-menu>
+<div>
+  <div class="h3">
+    Request List | <a routerLink="/requests/create">Create</a> |
+    <input [(ngModel)]="searchCriteria" type="text" placeholder="Search" />
+  </div>
+  <table [ngClass]="tableStyle">
+    <tr>
+      <th><a (click)="sortColumn('id')" class="btn btn-link">ID</a></th>
+      <th><a (click)="sortColumn('user')" class="btn btn-link">User</a></th>
+      <th>
+        <a (click)="sortColumn('description')" class="btn btn-link"
+          >Description</a>
+        </th>
+      <th>Justification</th>
+      <th>DeliveryMode</th>
+      <th>Status</th>
+      <th>Total</th>
+      
+    </tr>
+    <tr *ngFor="let request of requests">
+      <td>{{ request.id }}</td>
+      <td>{{ request.user.userName }}</td>
+      <td>{{ request.description }}</td>
+      <td>{{ request.justification }}</td>
+      <td>{{ request.deliveryMode }}</td>
+      <td>{{ request.status }}</td>
+      <td>{{ request.total }}</td>
+     
+
+      <td>
+        <a routerLink="/requests/edit/{{ request.id }}">Edit</a> | <a routerLink="/requests/detail/{{ request.id }}">Details</a>
+      </td>
+    </tr>
+  </table>
+</div>

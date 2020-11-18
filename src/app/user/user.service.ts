@@ -30,8 +30,8 @@ baseurl1: string = "http://localhost:8080/api/users/"
   remove(user: User):Observable<User>{
   return this.http.delete(`${this.baseurl1}${user.id}`) as Observable<User>;
   }
-  login(user:User):Observable<User>{
-    return this.http.get(`${this.baseurl1}${user.userName}/${user.password}`) as Observable<User>;
+  login(username: string, password: string):Observable<User>{
+    return this.http.get(`${this.baseurl1}${username}/${password}`) as Observable<User>;
   }
 
   

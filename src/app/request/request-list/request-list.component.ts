@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../product.class';
-import { ProductService } from '../product.service';
+import { Request } from '../request.class';
+import { RequestService } from '../request.service';
 
 @Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css'],
+  selector: 'app-request-list',
+  templateUrl: './request-list.component.html',
+  styleUrls: ['./request-list.component.css'],
 })
-export class ProductListComponent implements OnInit {
+export class RequestListComponent implements OnInit {
   tableStyle: string = 'table table-sm';
-  products: Product[] = [];
+  requests: Request[] = [];
   searchCriteria: string = '';
-  sortCriteria: string = 'name';
+  sortCriteria: string = 'status';
   ascSequence: boolean = false;
 
   sortColumn(column: string): void {
@@ -23,13 +23,13 @@ export class ProductListComponent implements OnInit {
     this.ascSequence = true;
   }
 
-  constructor(private productsvc: ProductService) {}
+  constructor(private requestsvc: RequestService) {}
 
   ngOnInit(): void {
-    this.productsvc.list().subscribe(
+    this.requestsvc.list().subscribe(
       (res) => {
         console.log(res);
-        this.products = res as Product[];
+        this.requests = res as Request[];
       },
       (err) => {
         console.error(err);
