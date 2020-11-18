@@ -1,18 +1,11 @@
 <div class="angular-component">
   <h3>Create</h3>
   <table *ngIf="product" class="table table-sm">
-    <tr>
-      <th>Id</th>
-      <td>
-        <input [(ngModel)]="product.id" disabled type="text" size="10" />
-      </td>
-    </tr>
-
-    <tr>
+   <tr>
       <th>VendorName</th>
       <td>
-        <select [(ngModel)]="product.vendor" type="text" size="15">
-          <option *ngFor="let vendor of vendors" [ngValue]="vendor">
+        <select [(ngModel)]="product.vendor">
+          <option *ngFor="let vendor of vendors" [ngValue]="vendor"  type="text" size="15">
             {{ vendor.name }}
           </option>
         </select>

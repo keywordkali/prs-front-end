@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product.class';
 import { ProductService } from '../product.service';
+import { Vendor } from '../../vendor/vendor.class';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -10,11 +11,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ProductDetailComponent implements OnInit {
 product:Product;
-
+vendors:Vendor;
   constructor(
     private productsvc: ProductService,
     private route: ActivatedRoute,
     private router: Router
+    
   ) { }
 
   remove(): void{
@@ -30,6 +32,7 @@ product:Product;
 
 
   ngOnInit(): void {
+    console.log("NgOnInit was executed")
     let id = +this.route.snapshot.params.id;
     this.productsvc.get(id).subscribe(
       res => {
