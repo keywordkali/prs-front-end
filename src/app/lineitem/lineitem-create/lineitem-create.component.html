@@ -1,2 +1,47 @@
 <app-menu></app-menu>
-<p>lineitem-create works!</p>
+<div class="angular-component">
+  <h3>Create</h3>
+  <table *ngIf="lineitem" class="table table-sm">
+    <tr>
+      <th>RequestId</th>
+      <td>
+        <select [(ngModel)]="request.requestId">
+          <option
+            *ngFor="let request of requests"
+            [ngValue]="request"
+            type="number"
+            size="15"
+          >
+            {{ request.id }}
+          </option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>ProductId</th>
+      <td>
+        <select [(ngModel)]="product.productId">
+          <option
+            *ngFor="let product of products"
+            [ngValue]="product"
+            type="number"
+            size="15"
+          >
+            {{ product.id }}
+          </option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>Quantity</th>
+      <td>
+        <input [(ngModel)]="request.quantity" type="number" size="15" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button (click)="save()" class="btn btn-primary">Save</button>
+      </td>
+    </tr>
+  </table>
+</div>
