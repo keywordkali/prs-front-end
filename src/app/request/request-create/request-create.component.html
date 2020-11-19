@@ -3,16 +3,14 @@
   <h3>Create</h3>
   <table *ngIf="request" class="table table-sm">
     <tr>
-      <th>Id</th>
-      <td>
-        <input [(ngModel)]="request.id" disabled type="text" size="10" />
-      </td>
-    </tr>
-    <tr>
       <th>User</th>
       <td>
-        <input [(ngModel)]="request.user" type="text" size="15" />
-      </td>
+        <select [(ngModel)]="request.user"> 
+        <option *ngFor="let user of users" [ngValue]="user" type="text" size="15">  
+          {{ user.userName }}
+          </option>
+          </select>
+        </td>
     </tr>
     <tr>
       <th>Description</th>

@@ -29,7 +29,7 @@ export class UserLoginComponent implements OnInit {
         console.debug('User Login:', res);
         this.user = res as User;
         this.syssvc.loggedInUser = this.user;
-        this.router.navigateByUrl('/users/list');
+        this.router.navigateByUrl('/requests/list');
       },
       (err) => {
         console.error('Error logging in user:', err);

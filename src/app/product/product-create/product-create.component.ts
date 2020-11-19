@@ -28,7 +28,7 @@ export class ProductCreateComponent implements OnInit {
         this.router.navigateByUrl('/products/list');
       },
       (err) => {
-        console.error('Error changing product:', err);
+        console.error('Error creating product:', err);
       }
     );
   }

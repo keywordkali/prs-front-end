@@ -21,7 +21,6 @@ import { HomeComponent } from './menu/home/home.component';
 import { HelpComponent } from './menu/help/help.component';
 import { E404Component } from './menu/e404/e404.component';
 import { ProductComponent } from './menu/product/product.component';
-import { RequestComponent } from './menu/request/request.component';
 import { LineitemComponent } from './menu/lineitem/lineitem.component';
 import { VendorComponent } from './menu/vendor/vendor.component';
 import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
@@ -34,10 +33,16 @@ import { ProductCreateComponent } from './product/product-create/product-create.
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { ProductSearchPipe } from './product/product-search.pipe';
+import { RequestComponent } from './menu/request/request.component';
 import { RequestListComponent } from './request/request-list/request-list.component';
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestCreateComponent } from './request/request-create/request-create.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
+import { RequestApproveComponent } from './request/request-approve/request-approve.component';
+import { RequestLinesComponent } from './request/request-lines/request-lines.component';
+import { RequestReviewComponent } from './request/request-review/request-review.component';
+import { LineitemCreateComponent } from './lineitem/lineitem-create/lineitem-create.component';
+import { LineitemEditComponent } from './lineitem/lineitem-edit/lineitem-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +62,6 @@ import { RequestEditComponent } from './request/request-edit/request-edit.compon
     HomeComponent,
     HelpComponent,
     E404Component,
-    RequestComponent,
     LineitemComponent,
     VendorComponent,
     VendorListComponent,
@@ -72,10 +76,17 @@ import { RequestEditComponent } from './request/request-edit/request-edit.compon
     ProductDetailComponent,
     ProductSearchPipe,
     RequestComponent,
+    RequestComponent,
     RequestListComponent,
     RequestDetailComponent,
     RequestCreateComponent,
-    RequestEditComponent
+    RequestEditComponent,
+    RequestApproveComponent,
+    RequestLinesComponent,
+    RequestReviewComponent,
+    LineitemCreateComponent,
+    LineitemEditComponent
+    
   ],
   imports: [
     BrowserModule,

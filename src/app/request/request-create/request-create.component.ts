@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Request } from '../request.class';
 import { RequestService } from '../request.service';
+import { User } from '../../user/user.class';
+import { UserService } from '../../user/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -10,8 +12,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class RequestCreateComponent implements OnInit {
 request:Request = new Request ();
+users: User[] = [];
   constructor(
     private requestsvc: RequestService,
+    private usersvc: UserService,
     private route: ActivatedRoute,
     private router: Router 
   ) { }
@@ -28,6 +32,15 @@ request:Request = new Request ();
   }
 
   ngOnInit(): void {
+    this.usersvc.list().subscribe(
+      (res) => {
+        console.debug(' Created:', res);
+        this.users = res as User [];
+      },
+      (err) => {
+        console.error('Error changing user:', err);
+      }
+    );
   }
 
 }

@@ -13,6 +13,9 @@ import { RequestListComponent } from './request/request-list/request-list.compon
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestCreateComponent } from './request/request-create/request-create.component';
+import { RequestApproveComponent } from './request/request-approve/request-approve.component';
+import { RequestLinesComponent } from './request/request-lines/request-lines.component';
+import { RequestReviewComponent } from './request/request-review/request-review.component';
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
 import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
 import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
@@ -39,8 +42,11 @@ const routes: Routes = [
   { path: 'products/detail/:id', component: ProductDetailComponent },
   { path: 'requests/list', component: RequestListComponent },
   { path: 'requests/create', component: RequestCreateComponent },
-  { path: 'requests/edit', component: RequestEditComponent },
-  { path: 'requests/detail', component: RequestDetailComponent },
+  { path: 'requests/edit/:id', component: RequestEditComponent },
+  { path: 'requests/detail/:id', component: RequestDetailComponent },
+  { path: 'requests/approve/:id', component: RequestApproveComponent },
+  { path: 'requests/lines/:id', component: RequestLinesComponent },
+  { path: 'requests/review/:id', component: RequestReviewComponent},
   { path: 'vendors/list', component: VendorListComponent },
   { path: 'vendors/edit/:id', component: VendorEditComponent },
   { path: 'vendors/create', component: VendorCreateComponent },

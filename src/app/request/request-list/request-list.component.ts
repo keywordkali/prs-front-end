@@ -22,6 +22,7 @@ export class RequestListComponent implements OnInit {
     this.sortCriteria = column;
     this.ascSequence = true;
   }
+ 
 
   constructor(private requestsvc: RequestService) {}
 
