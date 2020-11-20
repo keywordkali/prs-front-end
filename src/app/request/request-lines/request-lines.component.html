@@ -1,2 +1,59 @@
 <app-menu></app-menu>
-<p>request-lines works!</p>
+<div>
+    <div class="h3">RequestLines</div>
+    <table *ngIf="request" class="table table-sm">
+      <tr>
+        <th>Id</th>
+        <td>
+          <input [(ngModel)]="request.id" disabled type="text" size="15" />
+        </td>
+      </tr>
+      <tr>
+        <th>Description</th>
+        <td>
+          <input [(ngModel)]="request.description" disabled type="text" size="15" />
+        </td>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <td>
+          <input [(ngModel)]="request.status" disabled type="text" size="15" />
+        </td>
+      </tr>
+      <tr>
+        <th>Total</th>
+        <td>
+          <input [(ngModel)]="request.total" disabled type="text" size="15" />
+        </td>
+      </tr>
+    </table>
+</div>
+<div>
+    <div class="h3">LineItemDetails</div>
+    <table *ngIf="lineitems" class="table table-sm">
+      <tr>
+        <th>Id</th>
+        <td>
+          <input [(ngModel)]="user.id" disabled type="text" size="15" />
+        </td>
+      </tr>
+      <tr>
+        <th>RequestId</th>
+        <td>
+          <input [(ngModel)]="request.id" disabled type="text" size="15" />
+        </td>
+      </tr>
+      <tr>
+        <th>ProductId</th>
+        <td>
+          <input [(ngModel)]="product.id" disabled type="text" size="15" />
+        </td>
+      </tr>
+      <tr>
+        <th>Quantity</th>
+        <td>
+          <input [(ngModel)]="lineitem.quantity" disabled type="text" size="15" />
+        </td>
+      </tr>
+    </table>
+</div>

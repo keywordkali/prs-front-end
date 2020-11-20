@@ -76,7 +76,6 @@ import { LineitemEditComponent } from './lineitem/lineitem-edit/lineitem-edit.co
     ProductDetailComponent,
     ProductSearchPipe,
     RequestComponent,
-    RequestComponent,
     RequestListComponent,
     RequestDetailComponent,
     RequestCreateComponent,

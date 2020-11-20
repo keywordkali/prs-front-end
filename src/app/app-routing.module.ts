@@ -46,7 +46,7 @@ const routes: Routes = [
   { path: 'requests/detail/:id', component: RequestDetailComponent },
   { path: 'requests/approve/:id', component: RequestApproveComponent },
   { path: 'requests/lines/:id', component: RequestLinesComponent },
-  { path: 'requests/review/:id', component: RequestReviewComponent},
+  { path: 'requests/review', component: RequestReviewComponent},
   { path: 'vendors/list', component: VendorListComponent },
   { path: 'vendors/edit/:id', component: VendorEditComponent },
   { path: 'vendors/create', component: VendorCreateComponent },

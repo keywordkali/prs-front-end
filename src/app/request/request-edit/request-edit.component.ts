@@ -50,7 +50,7 @@ save(): void{
     );
     
     let id = +this.route.snapshot.params.id;
-    this.requestsvc.get(id).subscribe(
+    this.requestsvc.getById(id).subscribe(
       res => {
         console.debug(res);
         this.request = res;

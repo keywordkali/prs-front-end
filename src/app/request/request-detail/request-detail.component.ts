@@ -32,7 +32,7 @@ export class RequestDetailComponent implements OnInit {
   ngOnInit(): void {
     console.log("NgOnInit was executed")
     let id = +this.route.snapshot.params.id;
-    this.requestsvc.get(id).subscribe(
+    this.requestsvc.getById(id).subscribe(
       res => {
         console.debug(res);
         this.request = res;
