@@ -1,55 +1,32 @@
 <app-menu></app-menu>
-<div class="angular-component">
-    <h3>Edit</h3>
-    <table *ngIf="request" class="table table-sm">
-      <tr>
-        <th>Id</th>
-        <td>
-          <input [(ngModel)]="request.id" disabled type="text" size="10" />
-        </td>
-      </tr>
-      <tr>
-        <th>User</th>
-        <td>
-          <select [(ngModel)]="request.user" [compareWith]="compareFn">
-            <option
-              *ngFor="let user of users"
-              [ngValue]="user"
-              type="text"
-              size="15"
-            >
-              {{ user.userName }}
-            </option>
-          </select>
-        </td>
-      </tr>
-      <tr>
-        <th>Description</th>
-        <td>
-          <input [(ngModel)]="request.description" type="text" size="15" />
-        </td>
-      </tr>
-      <tr>
-        <th>Status</th>
-        <td>
-          <input [(ngModel)]="request.status" disabled type="text" size="15" />
-        </td>
-      </tr>
-      <tr>
-        <th>Total</th>
-        <td>
-          <input [(ngModel)]="request.total" type="text" size="15" />
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <button (click)="approveRequest()" class="btn btn-primary">Approve</button>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <button (click)="rejectRequest()" class="btn btn-primary">Reject</button>
-        </td>
-      </tr>
-    </table>
+<div>
+  <div class="h3">
+    Request Review | <a routerLink="/requests/Review">Review</a>
   </div>
+  <table class="table table-sm">
+    <tr>
+      <th>ID</th>
+      <th>User</th>
+      <th>Description</th>
+      <th>Justification</th>
+      <th>DeliveryMode</th>
+      <th>Status</th>
+      <th>Total</th>
+      
+    </tr>
+    <tr *ngFor="let request of requests">
+      <td>{{ request.id }}</td>
+      <td>{{ request.user.userName }}</td>
+      <td>{{ request.description }}</td>
+      <td>{{ request.justification }}</td>
+      <td>{{ request.deliveryMode }}</td>
+      <td>{{ request.status }}</td>
+      <td>{{ request.total }}</td>
+     
+
+      <td>
+        <a routerLink="/requests/review/{{ request.id }}">Review</a>
+      </td>
+    </tr>
+  </table>
+</div>

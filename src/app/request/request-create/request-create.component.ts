@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Request } from '../request.class';
 import { RequestService } from '../request.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Product } from '../../product/product.class';
+import { ProductService } from '../../product/product.service';
+import { SystemService } from '../../system.service';
 import { User } from '../../user/user.class';
 import { UserService } from '../../user/user.service';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-request-create',
@@ -11,13 +14,16 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./request-create.component.css']
 })
 export class RequestCreateComponent implements OnInit {
-request:Request = new Request ();
-users: User[] = [];
+request:Request = new Request ()
+product: Product[] = [];
+rId: number = 0;
   constructor(
     private requestsvc: RequestService,
-    private usersvc: UserService,
+    private syssvc: SystemService,
+    private productsvc: ProductService,
     private route: ActivatedRoute,
-    private router: Router 
+    private router: Router,
+    private usersvc: UserService
   ) { }
 
   save(): void{
@@ -32,15 +38,8 @@ users: User[] = [];
   }
 
   ngOnInit(): void {
-    this.usersvc.list().subscribe(
-      (res) => {
-        console.debug(' Created:', res);
-        this.users = res as User [];
-      },
-      (err) => {
-        console.error('Error changing user:', err);
-      }
-    );
+    this.request.user = this.syssvc.loggedInUser
+    
   }
 
 }

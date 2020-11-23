@@ -13,7 +13,6 @@ import { RequestListComponent } from './request/request-list/request-list.compon
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestCreateComponent } from './request/request-create/request-create.component';
-import { RequestApproveComponent } from './request/request-approve/request-approve.component';
 import { RequestLinesComponent } from './request/request-lines/request-lines.component';
 import { RequestReviewComponent } from './request/request-review/request-review.component';
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
@@ -25,6 +24,9 @@ import { ProductCreateComponent } from './product/product-create/product-create.
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
+import { RequestReviewLineComponent } from './request/request-review-line/request-review-line.component';
+import { LineitemCreateComponent } from './lineitem/lineitem-create/lineitem-create.component';
+import { LineitemEditComponent } from './lineitem/lineitem-edit/lineitem-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/users/list', pathMatch: 'full' },
@@ -44,14 +46,16 @@ const routes: Routes = [
   { path: 'requests/create', component: RequestCreateComponent },
   { path: 'requests/edit/:id', component: RequestEditComponent },
   { path: 'requests/detail/:id', component: RequestDetailComponent },
-  { path: 'requests/approve/:id', component: RequestApproveComponent },
   { path: 'requests/lines/:id', component: RequestLinesComponent },
   { path: 'requests/review', component: RequestReviewComponent},
+  {path: 'requests/review/:id', component: RequestReviewLineComponent},
   { path: 'vendors/list', component: VendorListComponent },
   { path: 'vendors/edit/:id', component: VendorEditComponent },
   { path: 'vendors/create', component: VendorCreateComponent },
   { path: 'vendors/detail/:id', component: VendorDetailComponent },
   { path: 'lineitem/list', component: LineitemComponent },
+  { path: 'lineitem/create/:rId', component: LineitemCreateComponent },
+  { path: 'lineitem/edit/:id', component: LineitemEditComponent },
   { path: '**', component: E404Component },
 ];
 

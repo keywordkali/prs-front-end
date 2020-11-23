@@ -1,33 +1,16 @@
 <app-menu></app-menu>
 <div class="angular-component">
   <h3>Create</h3>
-  <!-- <table *ngIf="lineitem" class="table table-sm">
+  <table *ngIf="lineitem" class="table table-sm">
     <tr>
-      <th>RequestId</th>
+      <th>Product</th>
       <td>
-        <select [(ngModel)]="request.requestId">
-          <option
-            *ngFor="let request of requests"
-            [ngValue]="request"
-            type="number"
-            size="15"
-          >
-            {{ request.id }}
-          </option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <th>ProductId</th>
-      <td>
-        <select [(ngModel)]="product.productId">
+        <select [(ngModel)]="lineitem.product">
           <option
             *ngFor="let product of products"
             [ngValue]="product"
-            type="number"
-            size="15"
           >
-            {{ product.id }}
+            {{ product.name }}
           </option>
         </select>
       </td>
@@ -35,7 +18,8 @@
     <tr>
       <th>Quantity</th>
       <td>
-        <input [(ngModel)]="request.quantity" type="number" size="15" />
+        <input [(ngModel)]="lineitem.quantity" type="number"  />
+
       </td>
     </tr>
     <tr>
@@ -44,4 +28,4 @@
       </td>
     </tr>
   </table>
-</div> -->
+</div>

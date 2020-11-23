@@ -1,59 +1,51 @@
 <app-menu></app-menu>
 <div>
-    <div class="h3">RequestLines</div>
-    <table *ngIf="request" class="table table-sm">
-      <tr>
-        <th>Id</th>
-        <td>
-          <input [(ngModel)]="request.id" disabled type="text" size="15" />
-        </td>
-      </tr>
-      <tr>
-        <th>Description</th>
-        <td>
-          <input [(ngModel)]="request.description" disabled type="text" size="15" />
-        </td>
-      </tr>
-      <tr>
-        <th>Status</th>
-        <td>
-          <input [(ngModel)]="request.status" disabled type="text" size="15" />
-        </td>
-      </tr>
-      <tr>
-        <th>Total</th>
-        <td>
-          <input [(ngModel)]="request.total" disabled type="text" size="15" />
-        </td>
-      </tr>
-    </table>
+  <div class="h3">
+    <span>Request</span> | 
+    <a *ngIf="request" routerLink="/lineitem/create/{{request.id}}">Create</a>
+  </div>
+  <table *ngIf="request" class="table table-sm">
+    <tr>
+      <th>Id</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Total</th>
+      <th>UserName</th> 
+      <th>Action</th>
+    </tr>
+    <tr>
+      <td>{{request.id}}</td>
+      <td>{{request.description}}</td>
+      <td>{{request.status}}</td>
+      <td>{{request.total | currency}}</td>
+      <td>{{request.user.userName}}</td>
+      <td>
+        <button (click)= "setRequestToReview()" class= "btn btn-primary">Submit</button>
+      </td>
+    </tr>
+  </table>
 </div>
+
 <div>
-    <div class="h3">LineItemDetails</div>
-    <table *ngIf="lineitems" class="table table-sm">
-      <tr>
-        <th>Id</th>
-        <td>
-          <input [(ngModel)]="user.id" disabled type="text" size="15" />
-        </td>
-      </tr>
-      <tr>
-        <th>RequestId</th>
-        <td>
-          <input [(ngModel)]="request.id" disabled type="text" size="15" />
-        </td>
-      </tr>
-      <tr>
-        <th>ProductId</th>
-        <td>
-          <input [(ngModel)]="product.id" disabled type="text" size="15" />
-        </td>
-      </tr>
-      <tr>
-        <th>Quantity</th>
-        <td>
-          <input [(ngModel)]="lineitem.quantity" disabled type="text" size="15" />
-        </td>
-      </tr>
-    </table>
+  <div class="h3">LineItemDetails</div>
+  <table class="table table-sm">
+    <tr>
+      <th>Id</th>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let line of lineitems" >
+      <td>{{line.id}}</td>
+      <td>{{line.product.name}}</td>
+      <td>{{line.product.price | currency}}</td>
+      <td>{{line.quantity}}</td>
+      <td>
+        <a routerLink="/lineitem/edit/{{line.id}}">Edit</a> | 
+        <button class="btn btn-link" (click)="remove(line.id)">Delete</button>
+        
+      </td>
+    </tr>
+  </table>
 </div>

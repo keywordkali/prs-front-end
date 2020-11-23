@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Request } from './request.class';
-import { User } from '../user/user.class';
+import { LineItem } from '../lineitem/lineitem.class';
 
 @Injectable({
   providedIn: 'root'
@@ -21,21 +21,25 @@ export class RequestService {
     return this.http.get(`${this.baseurl1}${id}`) as Observable<Request>;
   }
 
-  getRequestsForReview(userId: number): Observable<Request> {
-    return this.http.get(`${this.baseurl1}reviews${userId}`) as Observable<Request>;
+  getRequestsForReview(userId: number): Observable<Request[]> {
+    return this.http.get(`${this.baseurl1}reviews/${userId}`) as Observable<Request[]>;
   }
   loggedInUser(userId: number): Observable<Request[]> {
     return this.http.get(`${this.baseurl1}reviews/${userId}`) as Observable<Request[]>;
   }
   setRequestToReview(request: Request):Observable<Request>{
-    return this.http.put(`${this.baseurl1}/review${request.id}`,request) as Observable<Request>;
+    return this.http.put(`${this.baseurl1}review`,request) as Observable<Request>;
   }
   approveRequest(request: Request):Observable<Request>{
-    return this.http.put(`${this.baseurl1}/approve`,request) as Observable<Request>;
+    return this.http.put(`${this.baseurl1}approve`,request) as Observable<Request>;
   }
   rejectRequest(request: Request):Observable<Request>{
-    return this.http.put(`${this.baseurl1}/reject`,request) as Observable<Request>;
+    return this.http.put(`${this.baseurl1}reject`,request) as Observable<Request>;
   }
+  getLinesForRequest(request: Request):Observable<LineItem[]>{
+    return this.http.get(`${this.baseurl1}for-req/${request.id}`) as Observable<LineItem[]>
+  }
+
 
   create(request:Request): Observable<Request>{
   return this.http.post(`${this.baseurl1}`,request) as Observable<Request>;
@@ -46,4 +50,5 @@ export class RequestService {
   remove(request: Request):Observable<Request>{
   return this.http.delete(`${this.baseurl1}${request.id}`) as Observable<Request>;
   }
+  
 }

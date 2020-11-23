@@ -3,16 +3,6 @@
   <h3>Create</h3>
   <table *ngIf="request" class="table table-sm">
     <tr>
-      <th>User</th>
-      <td>
-        <select [(ngModel)]="request.user"> 
-        <option *ngFor="let user of users" [ngValue]="user" type="text" size="15">  
-          {{ user.userName }}
-          </option>
-          </select>
-        </td>
-    </tr>
-    <tr>
       <th>Description</th>
       <td>
         <input [(ngModel)]="request.description" type="text" size="15" />
@@ -34,20 +24,6 @@
       <th>DeliveryMode</th>
       <td>
         <input [(ngModel)]="request.deliveryMode" type="text" size="15" />
-      </td>
-    </tr>
-
-    <tr>
-      <th>Total</th>
-      <td>
-        <input [(ngModel)]="request.total" type="text" size="15" />
-      </td>
-    </tr>
-
-    <tr>
-      <th>ReasonForRejection</th>
-      <td>
-        <input [(ngModel)]="request.reasonForRejection" disabled type="text" size="15" />
       </td>
     </tr>
 

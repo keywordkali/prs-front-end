@@ -1,0 +1,61 @@
+<app-menu></app-menu>
+<div>
+  <div class="h3">Request</div>
+  <table *ngIf="request" class="table table-sm">
+    <tr>
+        <th>Id</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th>Username</th>
+    </tr>
+    <tr>
+        <td>{{request.id}}</td>
+        <td>{{request.description}}</td>
+        <td>{{request.status}}</td>
+        <td>{{request.total | currency}}</td>
+        <td>{{request.user.userName}}</td>
+    </tr>
+  </table>
+</div>
+
+<div>
+  <div class="h3">LineItemDetails</div>
+  <table *ngIf="lineitems" class="table table-sm">
+   <tr>
+    
+    <th>Product</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>Total</th>
+    
+
+   </tr>
+   <tr *ngFor = "let lineitem of lineitems">
+   
+    <td>{{lineitem.product.name}}</td>
+    <td>{{lineitem.quantity}}</td>
+    <td>{{lineitem.product.price | currency}}</td>
+    <td>{{lineitem.product.price*lineitem.quantity | currency}}</td>
+
+   
+
+    </tr>
+   
+    <tr> 
+      <td colspan="2">
+      <button (click)="approveRequest()" class="btn btn-success">Approve</button> | 
+     <button (click)="flipRejectionReason()" class="btn btn-danger">Reject</button> |
+     <span *ngIf = "showRejectionReason">
+     
+    
+     <span>ReasonForRejection:</span>
+        <span ><input [(ngModel)]='request.reasonForRejection' name='ReasonForRejection' type='text'></span>
+        <button (click)="rejectRequest()" class="btn btn-danger">Reject</button>
+   
+   
+  </span> 
+  </tr>
+  </table>
+</div>
+

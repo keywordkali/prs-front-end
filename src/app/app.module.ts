@@ -38,9 +38,9 @@ import { RequestListComponent } from './request/request-list/request-list.compon
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestCreateComponent } from './request/request-create/request-create.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
-import { RequestApproveComponent } from './request/request-approve/request-approve.component';
 import { RequestLinesComponent } from './request/request-lines/request-lines.component';
 import { RequestReviewComponent } from './request/request-review/request-review.component';
+import { RequestReviewLineComponent } from './request/request-review-line/request-review-line.component';
 import { LineitemCreateComponent } from './lineitem/lineitem-create/lineitem-create.component';
 import { LineitemEditComponent } from './lineitem/lineitem-edit/lineitem-edit.component';
 @NgModule({
@@ -80,11 +80,11 @@ import { LineitemEditComponent } from './lineitem/lineitem-edit/lineitem-edit.co
     RequestDetailComponent,
     RequestCreateComponent,
     RequestEditComponent,
-    RequestApproveComponent,
     RequestLinesComponent,
     RequestReviewComponent,
     LineitemCreateComponent,
-    LineitemEditComponent
+    LineitemEditComponent,
+    RequestReviewLineComponent
     
   ],
   imports: [
