@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product.class';
 import { ProductService } from '../product.service';
+import { SystemService } from 'src/app/system.service';
+import { User } from '../../user/user.class';
 
 @Component({
   selector: 'app-product-list',
@@ -13,6 +15,7 @@ export class ProductListComponent implements OnInit {
   searchCriteria: string = '';
   sortCriteria: string = 'name';
   ascSequence: boolean = false;
+  loggedInUser: User = null;
 
   sortColumn(column: string): void {
     if (column == this.sortCriteria) {
@@ -23,9 +26,13 @@ export class ProductListComponent implements OnInit {
     this.ascSequence = true;
   }
 
-  constructor(private productsvc: ProductService) {}
+  constructor(
+    private productsvc: ProductService,
+    private syssvc: SystemService
+    ) {}
 
   ngOnInit(): void {
+    this.loggedInUser= this.syssvc.loggedInUser;
     this.productsvc.list().subscribe(
       (res) => {
         console.log(res);

@@ -29,7 +29,7 @@ export class UserLoginComponent implements OnInit {
         console.debug('User Login:', res);
         this.user = res as User;
         this.syssvc.loggedInUser = this.user;
-        this.router.navigateByUrl('/requests/list');
+        this.router.navigateByUrl('/home');
       },
       (err) => {
         console.error('Error logging in user:', err);
@@ -39,7 +39,7 @@ export class UserLoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.username = 'Kcorrell';
+    this.username = 'Boss';
     this.password = 'Login';
     this.syssvc.loggedInUser = null;
   }

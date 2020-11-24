@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { VendorService } from '../vendor.service';
 import { Vendor } from '../../vendor/vendor.class';
+import { SystemService } from 'src/app/system.service';
+import { User } from '../../user/user.class';
 
 @Component({
   selector: 'app-vendor-list',
@@ -13,6 +15,7 @@ export class VendorListComponent implements OnInit {
   searchCriteria: string = "";
   sortCriteria: string ="name";
   ascSequence: boolean = false;
+  loggedInUser: User = null;
 
   sortColumn(column: string): void{
     if(column == this.sortCriteria){
@@ -24,10 +27,12 @@ export class VendorListComponent implements OnInit {
   }
 
   constructor(
-    private vendorsvc: VendorService
+    private vendorsvc: VendorService,
+    private syssvc: SystemService
   ) { }
 
   ngOnInit(): void {
+    this.loggedInUser= this.syssvc.loggedInUser;
     this.vendorsvc.list().subscribe(
       res => {console.log(res);
        this.vendors = res as Vendor[];

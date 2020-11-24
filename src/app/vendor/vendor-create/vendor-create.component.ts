@@ -3,6 +3,7 @@ import { Vendor } from '../vendor.class';
 import { VendorService } from '../vendor.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-vendor-create',
   templateUrl: './vendor-create.component.html',
@@ -10,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class VendorCreateComponent implements OnInit {
 vendor:Vendor = new Vendor();
+
   constructor(
     private vendorsvc: VendorService,
     private route: ActivatedRoute,
@@ -28,6 +30,7 @@ vendor:Vendor = new Vendor();
   }
 
   ngOnInit(): void {
+   
   }
 
 }

@@ -3,8 +3,8 @@
 </div>
 <div class='component-content'>
   <form class='text-center'>
-    <table *ngIf='username&&password' class='table-sm'
-      style='margin:50px auto;padding: 5px 20px; border:1px solid silver;width:400px; background-color: wheat;'>
+    <table  class='table-sm'
+      style='margin:50px auto;padding: 5px 20px; border:1px solid silver;width:400px; background-color:gainsboro;'>
       <tr class='text-center'>
         <td colspan="2">Login</td>
       </tr>
@@ -17,8 +17,14 @@
         <td><input [(ngModel)]='password' name='Password' type='password'></td>
       </tr>
       <tr>
-        <td class='text-center' colspan="2"><button type='submit' (click)="login()"
-            class='btn btn-primary'>Login</button></td>
+        <td>
+          <a href="/users/create" class = 'text-sm-center' class="btn btn-success" role="button">CreateNewUser</a>
+        </td>
+       
+        <td class='text-sm-center'><button type='submit' (click)="login()"
+            class='btn btn-primary'>Login</button>
+          </td>
+        
       </tr>
       <tr>
         <td colspan="2"><label class='text-sm-left'>{{message}}</label></td>

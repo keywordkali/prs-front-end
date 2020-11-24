@@ -1,6 +1,6 @@
 <app-menu></app-menu>
 <div>
-    <div class ="h3">Product List | <a routerLink="/products/create">Create</a> | 
+    <div class ="h3">Product List | <a routerLink="/products/create"*ngIf="loggedInUser.admin">Create</a> | 
 <input [(ngModel)]="searchCriteria" type ="text" placeholder="Search">
     </div>
     <table [ngClass]= "tableStyle">
@@ -20,12 +20,14 @@
             <td>{{ product.vendor.name }}</td>
             <td>{{ product.partNumber }}</td>
             <td>{{ product.name }}</td>
-            <td>{{ product.price }}</td>
+            <td>{{ product.price | currency }}</td>
             <td>{{ product.unit }}</td>
-            <td>{{ product.photoPath }}</td>
+            <td><img [src]="product.photoPath" height="100"></td>
+            
+            
             
             <td>
-              <a routerLink="/products/edit/{{product.id}}">Edit</a> | <a routerLink="/products/detail/{{product.id}}">Details</a>
+              <a routerLink="/products/edit/{{product.id}}"*ngIf="loggedInUser.admin">Edit</a> | <a routerLink="/products/detail/{{product.id}}">Details</a>
             </td>
           </tr>
         </table>

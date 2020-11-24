@@ -1,6 +1,6 @@
 <app-menu></app-menu>
 <div>
-    <div class ="h3">Vendor List | <a routerLink="/vendors/create">Create</a> | 
+    <div class ="h3">Vendor List | <a routerLink="/vendors/create" *ngIf="loggedInUser.admin">Create</a> | 
 <input [(ngModel)]="searchCriteria" type ="text" placeholder="Search">
     </div>
     <table [ngClass]= "tableStyle">
@@ -27,7 +27,7 @@
             <td>{{ vendor.phoneNumber }}</td>
             <td>{{ vendor.email }}</td>
             <td>
-              <a routerLink="/vendors/edit/{{vendor.id}}">Edit</a> | <a routerLink="/vendors/detail/{{vendor.id}}">Details</a>
+              <a routerLink="/vendors/edit/{{vendor.id}}"*ngIf="loggedInUser.admin">Edit</a> | <a routerLink="/vendors/detail/{{vendor.id}}">Details</a>
             </td>
           </tr>
         </table>
