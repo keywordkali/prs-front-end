@@ -11,7 +11,12 @@
     <tr>
       <th>VendorName</th>
       <td>
-        <input [(ngModel)]="product.vendor.name" disabled type="text" size="10" />
+        <input
+          [(ngModel)]="product.vendor.name"
+          disabled
+          type="text"
+          size="10"
+        />
       </td>
     </tr>
     <tr>
@@ -49,12 +54,8 @@
         <input [(ngModel)]="product.photoPath" disabled type="text" size="10" />
       </td>
     </tr>
-    
-    <tr>
-      <td colspan="2">
-        <button (click)="remove()" class="btn btn-primary">Delete</button>
-      </td>
-    </tr>
-  
+    <div *ngIf="isAdm">
+      <button (click)="remove()" class="btn btn-primary">Delete</button>
+    </div>
   </table>
 </div>

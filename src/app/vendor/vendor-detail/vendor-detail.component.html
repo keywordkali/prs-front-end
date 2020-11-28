@@ -1,63 +1,68 @@
 <app-menu></app-menu>
 <div class="angular-component">
-    <h3>Details</h3>
-    <table *ngIf="vendor" class = "table table-sm">
-        <tr>
-            <th>Id</th>
-            <td>
-                <input [(ngModel)]="vendor.id" disabled type="text" size="20">
-            </td>
-        </tr>
-        <tr>
-            <th>Code</th>
-            <td>
-                <input [(ngModel)]="vendor.code" disabled type="text" size="20">
-            </td>
-        </tr>
-        <tr>
-            <th>Name</th>
-            <td>
-                <input [(ngModel)]="vendor.name" disabled type="text" size="20">
-            </td>
-        </tr>
-        <tr>
-            <th>Address</th>
-            <td>
-                <input [(ngModel)]="vendor.address" disabled type="text" size="20">
-            </td>
-        </tr>
-        <tr>
-            <th>City</th>
-            <td>
-                <input [(ngModel)]="vendor.city" disabled type="text" size="20">
-            </td>
-        </tr>
-        <tr>
-            <th>State</th>
-            <td>
-                <input [(ngModel)]="vendor.state" disabled type="text" size="20">
-            </td>
-        </tr>
-        <tr>
-            <th>Zip</th>
-            <td>
-                <input [(ngModel)]="vendor.zip" disabled type="text" size="20">
-            </td>
-        </tr>
-        <tr>
-            <th>PhoneNumber</th>
-            <td>
-                <input [(ngModel)]="vendor.phoneNumber" disabled type="text" size="20">
-            </td>
-        </tr>
-        <tr>
-            <th>Email</th>
-            <td>
-                <input [(ngModel)]="vendor.email" disabled type="text" size="20">
-            </td>
-            <td colspan="2">
-                <button (click)="remove()" class = "btn btn-primary">Delete</button>
-            </td>
-        </tr>
-    </table>
-    </div>
+  <h3>Details</h3>
+  <table *ngIf="vendor" class="table table-sm">
+    <tr>
+      <th>Id</th>
+      <td>
+        <input [(ngModel)]="vendor.id" disabled type="text" size="20" />
+      </td>
+    </tr>
+    <tr>
+      <th>Code</th>
+      <td>
+        <input [(ngModel)]="vendor.code" disabled type="text" size="20" />
+      </td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <td>
+        <input [(ngModel)]="vendor.name" disabled type="text" size="20" />
+      </td>
+    </tr>
+    <tr>
+      <th>Address</th>
+      <td>
+        <input [(ngModel)]="vendor.address" disabled type="text" size="20" />
+      </td>
+    </tr>
+    <tr>
+      <th>City</th>
+      <td>
+        <input [(ngModel)]="vendor.city" disabled type="text" size="20" />
+      </td>
+    </tr>
+    <tr>
+      <th>State</th>
+      <td>
+        <input [(ngModel)]="vendor.state" disabled type="text" size="20" />
+      </td>
+    </tr>
+    <tr>
+      <th>Zip</th>
+      <td>
+        <input [(ngModel)]="vendor.zip" disabled type="text" size="20" />
+      </td>
+    </tr>
+    <tr>
+      <th>PhoneNumber</th>
+      <td>
+        <input
+          [(ngModel)]="vendor.phoneNumber"
+          disabled
+          type="text"
+          size="20"
+        />
+      </td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td>
+        <input [(ngModel)]="vendor.email" disabled type="text" size="20" />
+      </td>
+      <div *ngIf="isAdm">
+        <button (click)="remove()" class="btn btn-primary">Delete</button>
+      </div>
+    </tr>
+  </table>
+</div>

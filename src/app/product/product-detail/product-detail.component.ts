@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../product.class';
 import { ProductService } from '../product.service';
 import { Vendor } from '../../vendor/vendor.class';
+import { SystemService } from 'src/app/system.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { User } from 'src/app/user/user.class';
+
+
 
 @Component({
   selector: 'app-product-detail',
@@ -12,7 +16,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ProductDetailComponent implements OnInit {
 product:Product;
 vendors:Vendor;
+get isAdm(): boolean{
+  return this.syssvc.loggedInUser.admin;
+}
   constructor(
+    private syssvc: SystemService,
     private productsvc: ProductService,
     private route: ActivatedRoute,
     private router: Router

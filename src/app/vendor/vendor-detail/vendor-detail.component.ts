@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Vendor } from '../vendor.class';
 import { VendorService } from '../vendor.service';
+import { SystemService } from '../../system.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -10,10 +11,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class VendorDetailComponent implements OnInit {
  vendor:Vendor;
+ get isAdm(): boolean{
+  return this.syssvc.loggedInUser.admin;
+}
   
  constructor(
    private vendorsvc: VendorService,
    private route: ActivatedRoute,
+   private syssvc: SystemService,
    private router: Router
  ) { }
 
