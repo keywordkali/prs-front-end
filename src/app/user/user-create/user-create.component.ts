@@ -23,7 +23,7 @@ user:User = new User();
         console.debug("User Create:", res);
         this.router.navigateByUrl("/users/list");
       },
-      err => { console.error("Error changing user:" , err); }
+      err => { console.error("Error creating user:" , err); }
     );
   }
 
