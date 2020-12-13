@@ -10,7 +10,7 @@ import { User } from './user.class';
   providedIn: 'root'
 })
 export class UserService {
-baseurl1: string = "http://localhost:8080/api/users/"
+baseurl1: string = "https://localhost:5001/api/users/"
   constructor(
     private http: HttpClient
   ) { }
@@ -31,7 +31,7 @@ baseurl1: string = "http://localhost:8080/api/users/"
   return this.http.delete(`${this.baseurl1}${user.id}`) as Observable<User>;
   }
   login(username: string, password: string):Observable<User>{
-    return this.http.get(`${this.baseurl1}${username}/${password}`) as Observable<User>;
+    return this.http.get(`${this.baseurl1}login/${username}/${password}`) as Observable<User>;
   }
 
   

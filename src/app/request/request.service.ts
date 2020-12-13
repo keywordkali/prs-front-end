@@ -8,7 +8,7 @@ import { LineItem } from '../lineitem/lineitem.class';
   providedIn: 'root'
 })
 export class RequestService {
-  baseurl1: string = "http://localhost:8080/api/requests/"
+  baseurl1: string = "https://localhost:5001/api/requests/"
   constructor(
     private http: HttpClient
   ) { }

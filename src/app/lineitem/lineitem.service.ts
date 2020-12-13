@@ -11,7 +11,7 @@ import { Product } from '../product/product.class';
 })
 export class LineItemService {
 
-  baseurl1: string = "http://localhost:8080/api/lines/"
+  baseurl1: string = "https://localhost:5001/api/lines/"
   constructor(
     private http: HttpClient
   ) { }
